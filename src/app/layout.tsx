@@ -1,0 +1,100 @@
+
+import type { Metadata } from "next";
+import { Inter, Poppins } from "next/font/google";
+import "./globals.css";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { CartProvider } from '@/context/CartContext';
+import { CompositeProvider } from '@/context/CompositeProvider';
+import { ThemeProvider } from '@/components/ThemeProvider';
+import React, { Suspense } from 'react';
+import ChatClientLoader from '@/components/ChatClientLoader';
+import { Toaster } from 'react-hot-toast';
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ['400', '500', '600', '700'],
+  display: "swap",
+  variable: "--font-inter"
+});
+
+const poppins = Poppins({
+  weight: ["500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins"
+});
+
+export const metadata: Metadata = {
+  title: "AllMart",
+  description: "AllMart is a  multi-tenant e-commerce SaaS platform for businesses of all sizes",
+};
+
+// Split the layout into server and client components
+function RootLayoutClient({ children }: { children: React.ReactNode }) {
+  'use client';
+  return (
+    <CompositeProvider>
+      <Header />
+      <main className="flex-1 lg:px-4">
+        <Suspense fallback={<div>Loading...</div>}>
+          {children}
+        </Suspense>
+      </main>
+      <Footer />
+      {/* Chat assistant widget - client-only loader */}
+      {/* ChatClientLoader is a 'use client' component so it's safe to render here */}
+      {/* Dynamically import to reduce initial JS payload */}
+      <ChatClientLoader />
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: '#fff',
+            color: '#333',
+            boxShadow: '0 4px 12px rgba(130, 73, 73, 0.15)',
+            borderRadius: '8px',
+            padding: '12px 16px',
+          },
+          success: {
+            iconTheme: {
+              primary: '#10B981',
+              secondary: 'white',
+            },
+            style: {
+              border: '1px solid #10B981',
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: '#EF4444',
+              secondary: 'white',
+            },
+            style: {
+              border: '1px solidrgb(213, 92, 92)',
+            },
+          },
+        }}
+      />
+    </CompositeProvider>
+  );
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${poppins.variable} min-h-screen bg-background text-foreground flex flex-col font-sans`}>
+        <ThemeProvider>
+          <RootLayoutClient>
+            {children}
+          </RootLayoutClient>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
