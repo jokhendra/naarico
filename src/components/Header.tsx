@@ -341,7 +341,7 @@ export function Header() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2">
               <div className="w-28 h-12 sm:w-36 sm:h-14 md:w-44 md:h-16 relative">
-                <Image src="/images/logo/logo.svg" alt="Logo" fill className="object-contain" />
+                <Image src="/images/logo/naarico-logo.jpeg" alt="Naarico - Suits & Sarees" fill className="object-contain" />
               </div>
             </Link>
           </div>

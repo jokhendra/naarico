@@ -239,7 +239,7 @@ export function ChatWidget() {
                   <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-green-400 rounded-full border-2 border-white"></div>
                 </div>
                   <div className="min-w-0 flex-1">
-                   <div className="text-2xl font-extrabold tracking-tight text-white drop-shadow-sm truncate">Ask AllMart</div>
+                   <div className="text-2xl font-extrabold tracking-tight text-white drop-shadow-sm truncate">Ask Naarico</div>
                    <div className="text-sm text-white/90 font-semibold tracking-wide flex flex-wrap items-center gap-1">
                      <span className="whitespace-nowrap">Assistant</span>
                      {expanded && <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full whitespace-nowrap">Expanded</span>}
@@ -308,7 +308,7 @@ export function ChatWidget() {
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                   </svg>
                 </div>
-                                 <h3 className="text-xl font-extrabold text-gray-900 mb-3 tracking-tight">Welcome to AllMart! 👋</h3>
+                                 <h3 className="text-xl font-extrabold text-gray-900 mb-3 tracking-tight">Welcome to Naarico! 👋</h3>
                  <p className="text-gray-700 text-sm mb-6 font-medium leading-relaxed">I&apos;m here to help you with shopping, orders, and more.</p>
                 
                 {/* Quick action buttons */}

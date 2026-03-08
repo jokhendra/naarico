@@ -48,9 +48,9 @@ export function Footer() {
             <Link href="/" className="inline-block">
               <div className="flex items-center mb-6">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#ed875a] to-[#ed8c61] flex items-center justify-center mr-3 shadow-sm">
-                  <span className="text-white font-bold text-xl">E</span>
+                  <span className="text-white font-bold text-lg">N</span>
                 </div>
-                <h3 className="font-bold text-xl text-gray-900 dark:text-white font-heading">E-Commerce</h3>
+                <h3 className="font-bold text-xl text-gray-900 dark:text-white font-heading">Naarico</h3>
               </div>
             </Link>
             

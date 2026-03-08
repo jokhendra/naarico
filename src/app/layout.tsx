@@ -8,7 +8,7 @@ import { CartProvider } from '@/context/CartContext';
 import { CompositeProvider } from '@/context/CompositeProvider';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import React, { Suspense } from 'react';
-import ChatClientLoader from '@/components/ChatClientLoader';
+// import ChatClientLoader from '@/components/ChatClientLoader';
 import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({
@@ -26,8 +26,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "AllMart",
-  description: "AllMart is a  multi-tenant e-commerce SaaS platform for businesses of all sizes",
+  title: "Naarico",
+  description: "Naarico – SUITS & SAREES. A multi-tenant e-commerce platform for traditional and contemporary fashion.",
 };
 
 // Split the layout into server and client components
@@ -42,10 +42,8 @@ function RootLayoutClient({ children }: { children: React.ReactNode }) {
         </Suspense>
       </main>
       <Footer />
-      {/* Chat assistant widget - client-only loader */}
-      {/* ChatClientLoader is a 'use client' component so it's safe to render here */}
-      {/* Dynamically import to reduce initial JS payload */}
-      <ChatClientLoader />
+      {/* Chat assistant widget - commented out for now */}
+      {/* <ChatClientLoader /> */}
       <Toaster
         position="top-right"
         toastOptions={{
